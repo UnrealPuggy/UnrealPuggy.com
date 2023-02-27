@@ -1,0 +1,42 @@
+html {
+    font-family: Minecraft;
+}
+body {
+    margin-left:30%;
+    margin-right:30%;
+}
+.links a {
+    color:black;
+    background-color:lime;
+    padding: 5px 5px;
+    text-decoration: none;
+    border-color: lime;
+    border-width:3px;
+    border-style: outset;
+}
+.links a:hover {
+    background-color: green;
+    border-style: inset;
+}
+
+.channel {
+    position:fixed;
+    top:0px;
+    left:0px;
+}
+.bottombar {
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    left:0px;
+    background-color:gray;
+    height:2em;
+    transition: bottom .5s ease, height .5s ease;
+    text-align: center;
+}
+.bottombar:hover {
+    bottom:0px;
+    height: 500px;
+}
+    @font-face {font-family: Minecraft; src: url("/fonts/Minecraftia.ttf");}
+    /*@font-face {font-family: MinecraftTitle; src: url("minecrafter.ttf");}*/
