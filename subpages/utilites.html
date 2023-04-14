@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Utilities</title>
+        <link rel="icon" href="../images/UnrealPuggy pfp.png"> 
+        <link rel="stylesheet" href="../styles/utilities.css">
+    </head>
+    <body>
+		<p style="font-size:200%"> <a href="../index.html">UnrealPuggy.com</a></p>
+		<p style="font-size:175%">Made By <a href='https://www.youtube.com/@unrealpuggy' target="_blank">UnrealPuggy</a></p>
+		<p>Click the output to copy it</p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<h2>Text To Binary Generator</h2>
+		<p>
+		<input placeholder="Text Here..." id="T2BInput"></p>
+		<p id="T2B" onclick="copyText(getId('T2B').innerHTML)" type="output"></p>
+		<br>
+		<br>
+		<h2>Binary To Text Generator</h2>
+		<p>
+		<input placeholder="Binary Here..." id="B2TInput"></p>
+		<p id="B2T" onclick="copyText(getId('B2T').innerHTML)" type="output"></p>
+		<br>
+		<br>
+		<h2>Base64 Encoder</h2>
+		<p>
+		<input placeholder="Text Here..." id="T264Input"></p>
+		<p id="T264" onclick="copyText(getId('T264').innerHTML)" type="output">
+		<br>
+		<br>
+		<h2>Base64 Decoder</h2>
+		<p>
+		<input placeholder="Base64 Here..." id="642TInput"></p>
+		<p id="642T" onclick="copyText(getId('642T').innerHTML)" type="output">
+    </body>
+	<script>
+		//Binary
+		getId('T2BInput').addEventListener('input', function() {
+		getId('T2B').innerHTML = encodeBinary(getId('T2BInput').value);
+		})
+		getId('B2TInput').addEventListener('input', function() {
+		getId('B2T').innerHTML = decodeBinary(getId('B2TInput').value);
+		})
+		function encodeBinary(input) {
+  		var input = input;
+  		var output = "";
+  for (var i = 0; i < input.length; i++) {
+      output += input[i].charCodeAt(0).toString(2) + " ";
+  }
+			return output;
+}
+		
+		function decodeBinary(binary){
+			binary = binary.split(' ');
+			binary = binary.map(elem => parseInt(elem,2));
+			binary = binary.map(elem => String.fromCharCode(elem));
+			let newText = binary.join("");
+			return newText;
+}
+		//Base64
+		getId('T264Input').addEventListener('input', function() {
+		getId('T264').innerHTML = btoa(getId('T264Input').value);
+		})
+		getId('642TInput').addEventListener('input', function() {
+		getId('642T').innerHTML = atob(getId('642TInput').value);
+		})
+		
+		
+		async function copyText(text){
+   			try {
+     			 await navigator.clipboard.writeText(text);
+     			 console.log('Content copied to clipboard');
+    		} 
+			catch (err) {
+     			 console.error('Failed to copy: ', err);
+    		}
+}
+		function getId(id) {
+			return document.getElementById(id);	
+		}
+		function sleep(ms) {
+   			 return new Promise(resolve => setTimeout(resolve, ms));
+}
+	</script>
+		<script src="../js/soundhandler.js"></script>
+</html>
+
+
+
+    
