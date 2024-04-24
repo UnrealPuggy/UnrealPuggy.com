@@ -15,18 +15,18 @@ for(let i = 0; i < document.getElementsByTagName('a').length; i++) {
 
 document.addEventListener('keydown', keySound);
 function hoverSound() {
-        var sound = new Audio('../sounds/hover.mp3');
+        var sound = new Audio('./sounds/hover.mp3');
         sound.play()
         sound.remove()
     }
 function keySound() {
-        let sound = new Audio('../sounds/keyboard1.mp3')
+        let sound = new Audio('./sounds/keyboard1.mp3')
         sound.volume = .5;
         sound.play()
         sound.remove()
 }
 function clickSound() {
-        let sound = new Audio('../sounds/click.mp3')
+        let sound = new Audio('./sounds/click.mp3')
         sound.play()
         sound.remove()
 }
